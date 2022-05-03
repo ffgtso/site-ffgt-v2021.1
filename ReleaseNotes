@@ -1,0 +1,169 @@
+Release Notes for gluon-4830-@@RELEASE@@
+========================================
+
+This Freifunk Firmware is based on Gluon v2018.1.4 (1.0.x)
+or v2018.2 (1.1.x; as of 2020-01-10 based on v2018.2.4) or
+v2019.1 (1.2.x; as of 2021-04-06 based on v2019.1.3) and
+includes some additional modules.
+
+   1.0.x: v2018.1.4 based, fastd
+   1.1.2: v2018.2.x based, fastd
+   1.1.5: v2018.2.x based, L2TP (tunneldigger)
+   1.1.6: v2018.2.x based, VXLAN via Wireguard
+   1.2.0: v2019.1.x based, L2TP (tunneldigger) (>= 1.2.0~38 includes gluon-migrate-ffbi)
+   1.4.0: v2021.1.x based, L2TP (tunneldigger)
+
+ - modified $GLUON/package/gluon-setup-mode/luasrc/lib/gluon/upgrade/320-setup-ifname
+   and $GLUON/package/gluon-setup-mode/files/lib/gluon/setup-mode/rc.d/S20network so
+   that node a) uses WAN (if existing) for setup mode and b) is DHCP client — just like
+   in Freifunk mode.
+
+   Files changed in core Gluon:
+   ./package/gluon-setup-mode/luasrc/lib/gluon/upgrade/320-setup-ifname
+   ./package/gluon-setup-mode/Makefile
+   ./package/gluon-setup-mode/files/lib/gluon/setup-mode/rc.d/S20network
+   ./package/gluon-status-page/files/lib/gluon/status-page/view/status-page.html
+   ./package/gluon-config-mode-core/files/lib/gluon/setup-mode/rc.d/S50uhttpd
+   Only before 1.4.x:
+   ./package/gluon-respondd/src/respondd.c (from 1.4.x onwards: ./package/gluon-respondd/src/respondd-nodeinfo.c)
+   ./package/gluon-respondd/files/etc/init.d/gluon-respondd (Undoing commit 59a44274cb00e88e3420b4c9c4303ca70f16b211)
+
+ - gluon-ssid-changer
+
+   See https://github.com/Freifunk-Nord/gluon-ssid-changer/tree/2018.1.x -- for commit etc. see modules file
+
+ - ffgt-banner
+
+   Supplies a pimped motd file, including info about the HW, the OS and the FW version
+
+ - ffgt-geolocate
+
+   Supports geolocation in config mode and corrections in Freifunk mode
+
+ - ffgt-setup-mode
+
+   Base scripts of our geolocation-aware setup process
+
+ - ffgt-nachtruhe
+
+   Toggle "Nachtruhe", i. e. disable AP between 22:00 and 06:00 (based on ffho-ap-timer)
+
+ - ffda-domain-director
+
+   Server-based domain selection based on node's or neighbouring node's coordinates
+
+ - ffda-name-conformizer
+
+   Modify the nodename per firmware upgrade (cosmetic, non-sticking change)
+
+ - tecff-autoupdater-wifi-fallback
+
+   On prolonged lack of connectivity to the mesh, search for freifunk SSIDs and
+   try to become a wireless client, then force autoupdate.
+
+ - gluon-ebtables-limit-arp
+
+   The gluon-ebtables-limit-arp package adds filters to limit the amount of ARP
+   requests client devices are allowed to send into the mesh.
+
+   The limits per client device, identified by its MAC address, are 6 packets per
+   minute and 1 per second per node in total. A burst of up to 50 ARP requests is
+   allowed until the rate-limiting takes effect (see --limit-burst in ebtables(8)).
+   […]
+   It mitigates the impact on the mesh when a larger range of its IPv4 subnet is
+   being scanned, which would otherwise result in a significant amount of ARP chatter,
+   even for unused IP addresses.
+
+ - gluon-ebtables-filter-multicast
+
+   The gluon-ebtables-filter-multicast package filters out various kinds of
+   non-essential multicast traffic, as this traffic often constitutes a
+   disproportionate burden on the mesh network. Unfortunately, this breaks many
+   useful services (Avahi, Bonjour chat, …), but this seems unavoidable, as the
+   current Avahi implementation is optimized for small local networks and causes
+   too much traffic in large mesh networks.
+
+ - gluon-ebtables-filter-ra-dhcp
+
+   The gluon-ebtables-filter-ra-dhcp package tries to prevent common
+   misconfigurations (i.e. connecting the client interface of a Gluon node to a
+   private network) from causing issues for either of the networks.
+
+ - gluon-tunneldigger-watchdog
+
+   Script that checks every five minutes for the presence of the tunneldigger process,
+   restarting it if neccessary.
+
+ - gluon-migrate-ffbi
+
+   Migrates nodename, coordinates, ... from FFBI-Firmware to Gluon
+
+Known Issues (from Gluon's Release Notes):
+==========================================
+
+v2017.1:
+--------
+
+- Note: There is an issue in all Gluon versions before 2016.2.6 that will
+  lead to x86 systems losing their configuration when upgrading to Gluon
+  2017.1! Older Gluon versions should be upgraded to 2016.2.6 first before
+  switching to 2017.1.
+
+- Another potential issue mostly affects virtual machines: Gluon 2017.1
+  images are bigger than 2016.2.x images on x86. If your virtual harddisk
+  is based on a 2016.2.x image, it must be resized to 273MB or bigger before
+  upgrading to Gluon 2017.1. Using qemu, the command "qemu-img resize $IMAGE 273MB"
+  can be used to do this.
+
+v2017.1.3:
+----------
+
+- Sporadic segfaults of busybox (ash) when running shell scripts on ar71xx (#1157)
+
+  The workaround added in Gluon v2017.1.1 has greatly reduced the frequency of
+  segfaults, but did not make them disappear completely.
+
+v2017.1.5:
+----------
+
+- Frequent reboots due to out-of-memory on weak hardware in larger meshes (#1243)
+
+v2017.1.6:
+----------
+
+- Improve image validation for TP-Link CPE/WBS 210/510 and make it ready for
+  future images (LEDE/6577fe2198f5)
+
+  Future OpenWrt/Gluon images will move the image metadata (“support-list”) of
+  the CPE/WBS 210/510 images to a different offset. Make sysupgrade ready to
+  allow installing such images.
+
+  This change was also backported to Gluon v2016.2.x to allow direct updates
+  to future Gluon master versions without installing v2017.1.x first.
+
+- Sporadic segfaults of busybox (ash) when running shell scripts on ar71xx have
+  disappeared with the latest updates (#1157)
+
+v2018.1:
+--------
+
+- This version changes the flash partition layout on some devices (TP-Link
+  CPE/WBS 210/510). To avoid upgrade failures, make sure to upgrade to Gluon
+  2017.1.8 or the latest Gluon 2016.2.x (unreleased) before installing Gluon
+  2018.1.
+
+v2018.1.1:
+----------
+
+- Frequent reboots due to out-of-memory or high load due to memory pressure
+  on weak hardware specially in larger meshes (#1243)
+
+  Optimizations in Gluon 2018.1 have significantly improved memory usage. There
+  are still known bugs leading to unreasonably high load that we hope to solve
+  in future releases.
+
+
+
+
+Further Build Information:
+==========================
