@@ -20,3 +20,12 @@
 ##  PACKAGES_$feedname_BRANCH
 #   the branch to check out
 #PACKAGES_MY_OWN_PACKAGES_BRANCH=my_branch
+
+GLUON_SITE_FEEDS="ssidchanger ffgt"
+PACKAGES_SSIDCHANGER_REPO=https://github.com/freifunk-nord/gluon-ssid-changer.git
+PACKAGES_SSIDCHANGER_COMMIT=f266b9e6328f97354f3b8777d1111ad044be9be5
+PACKAGES_SSIDCHANGER_BRANCH=2018.1.x
+
+PACKAGES_FFGT_REPO=https://github.com/ffgtso/ffgt_packages-v2018.1.git
+PACKAGES_FFGT_COMMIT=LATEST
+PACKAGES_FFGT_BRANCH=master
