@@ -11,11 +11,16 @@ GLUON_FEATURES := \
 	ebtables-filter-ra-dhcp \
 	ebtables-limit-arp \
 	mesh-batman-adv-15 \
-	mesh-vpn-fastd \
+	mesh-vpn-tunneldigger \
+	tunneldigger-watchdog \
+    migrate-vpn \
+	radvd \
 	respondd \
 	status-page \
 	web-advanced \
-	web-wizard
+	web-wizard \
+	web-private-wifi \
+	config-mode-domain-select
 
 ##	GLUON_SITE_PACKAGES
 #		Specify additional Gluon/OpenWrt packages to include here;
@@ -28,7 +33,6 @@ GLUON_SITE_PACKAGES := iwinfo \
     gluon-ebtables-limit-arp \
     gluon-ebtables-filter-multicast \
     gluon-radv-filterd \
-    gluon-tunneldigger-watchdog \
     -gluon-alfred \
     gluon-ssid-changer \
     ffgt-banner \
@@ -36,8 +40,6 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffgt-setup-mode \
     ffgt-location \
     ffgt-geolocator \
-    micrond \
-    -crond \
     ffda-domain-director \
   	respondd-module-airtime \
   	ffgt-preserve-mods \
