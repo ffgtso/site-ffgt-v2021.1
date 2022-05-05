@@ -24,9 +24,8 @@ includes some additional modules.
    ./package/gluon-setup-mode/files/lib/gluon/setup-mode/rc.d/S20network
    ./package/gluon-status-page/files/lib/gluon/status-page/view/status-page.html
    ./package/gluon-config-mode-core/files/lib/gluon/setup-mode/rc.d/S50uhttpd
-   Only before 1.4.x:
-   ./package/gluon-respondd/src/respondd.c (from 1.4.x onwards: ./package/gluon-respondd/src/respondd-nodeinfo.c)
    ./package/gluon-respondd/files/etc/init.d/gluon-respondd (Undoing commit 59a44274cb00e88e3420b4c9c4303ca70f16b211)
+   ./package/gluon-respondd/src/respondd.c (from 1.4.x onwards: ./package/gluon-respondd/src/respondd-nodeinfo.c)
 
  - gluon-ssid-changer
 
