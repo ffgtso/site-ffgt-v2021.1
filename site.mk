@@ -47,7 +47,8 @@ GLUON_SITE_PACKAGES := iwinfo \
 	ffho-ap-timer \
 	ffgt-nachtruhe \
 	gluon-web-logging \
-	gluon-migrate-ffbi
+	gluon-migrate-ffbi \
+	ffgt-speedtest
 
 ##	DEFAULT_GLUON_RELEASE
 #		version string to use for images
@@ -83,8 +84,11 @@ GLUON_DEPRECATED=upgrade
 
 GLUON_MULTIDOMAIN=1
 
-GLUON_VERSION = v2021.1.1-ffgt
+GLUON_VERSION = v2021.1.2-ffgt
 
+ifneq ($(GLUON_TARGET),ar71xx-tiny)
+    GLUON_SITE_PACKAGES += sipcalc bird6 tcpdump wireguard-tools wireguard
+endif
 
 # support for USB UMTS/3G devices
 USB_PACKAGES_3G := \
