@@ -88,7 +88,7 @@ GLUON_VERSION = v2021.1.2-ffgt
 
 ifneq ($(GLUON_TARGET),ar71xx-tiny)
     WANTED_GLUON_SITE_PACKAGES += sipcalc bird1-ivp6 bird1c-ipv6 tcpdump wireguard-tools wireguard
-    GLUON_SITE_PACKAGES += sipcalc btcpdump wireguard-tools wireguard
+    GLUON_SITE_PACKAGES += sipcalc tcpdump wireguard-tools wireguard
 endif
 
 # support for USB UMTS/3G devices
