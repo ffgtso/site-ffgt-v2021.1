@@ -49,12 +49,13 @@ GLUON_SITE_PACKAGES := iwinfo \
 	gluon-web-logging \
 	gluon-migrate-ffbi \
 
+GLUON_FEATURES_standard := wireless-encryption-wpa3
+
 GLUON_SITE_PACKAGES_standard := ffgt-speedtest \
     sipcalc \
     tcpdump \
     wireguard-tools \
-    wireguard \
-    wireless-encryption-wpa3
+    wireguard
 
 # \ bird1-ivp6 bird1c-ipv6
 
