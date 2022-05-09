@@ -13,7 +13,7 @@ GLUON_FEATURES := \
 	mesh-batman-adv-15 \
 	mesh-vpn-tunneldigger \
 	tunneldigger-watchdog \
-    migrate-vpn \
+	migrate-vpn \
 	radvd \
 	respondd \
 	status-page \
@@ -30,8 +30,6 @@ GLUON_FEATURES := \
 
 GLUON_SITE_PACKAGES := iwinfo \
     tecff-autoupdater-wifi-fallback \
-    gluon-ebtables-limit-arp \
-    gluon-ebtables-filter-multicast \
     gluon-radv-filterd \
     -gluon-alfred \
     gluon-ssid-changer \
@@ -41,17 +39,18 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffgt-location \
     ffgt-geolocator \
     ffda-domain-director \
-  	respondd-module-airtime \
-  	ffgt-preserve-mods \
+    respondd-module-airtime \
+    ffgt-preserve-mods \
     ffda-name-conformizer \
-	ffho-ap-timer \
-	ffgt-nachtruhe \
-	gluon-web-logging \
-	gluon-migrate-ffbi \
+    ffho-ap-timer \
+    ffgt-nachtruhe \
+    gluon-web-logging \
+    gluon-migrate-ffbi \
+    ffgt-speedtest
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
 
-GLUON_SITE_PACKAGES_standard := ffgt-speedtest \
+GLUON_SITE_PACKAGES_standard := \
     sipcalc \
     tcpdump \
     wireguard-tools \
