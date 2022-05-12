@@ -54,7 +54,8 @@ GLUON_SITE_PACKAGES_standard := \
     sipcalc \
     tcpdump \
     wireguard-tools \
-    wireguard
+    wireguard \
+    mtr
 
 # \ bird1-ivp6 bird1c-ipv6
 
