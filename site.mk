@@ -30,6 +30,7 @@ GLUON_FEATURES := \
 
 GLUON_SITE_PACKAGES := iwinfo \
     ffgt-tunneldigger \
+    -tunneldigger \
     tecff-autoupdater-wifi-fallback \
     gluon-radv-filterd \
     -gluon-alfred \
