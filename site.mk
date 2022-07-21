@@ -29,6 +29,7 @@ GLUON_FEATURES := \
 #		chosen feature flags
 
 GLUON_SITE_PACKAGES := iwinfo \
+    ffgt-tunneldigger \
     tecff-autoupdater-wifi-fallback \
     gluon-radv-filterd \
     -gluon-alfred \
@@ -51,11 +52,9 @@ GLUON_SITE_PACKAGES := iwinfo \
 GLUON_FEATURES_standard := wireless-encryption-wpa3
 
 GLUON_SITE_PACKAGES_standard := \
-    sipcalc \
     tcpdump \
-    wireguard-tools \
-    wireguard \
-    mtr
+    mtr \
+    ip-full
 
 # \ bird1-ivp6 bird1c-ipv6
 
