@@ -30,10 +30,8 @@ GLUON_FEATURES := \
 
 GLUON_SITE_PACKAGES := iwinfo \
     ffgt-tunneldigger \
-    -tunneldigger \
     tecff-autoupdater-wifi-fallback \
     gluon-radv-filterd \
-    -gluon-alfred \
     gluon-ssid-changer \
     ffgt-banner \
     ffgt-geolocate \
@@ -48,14 +46,18 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffgt-nachtruhe \
     gluon-web-logging \
     gluon-migrate-ffbi \
-    ffgt-speedtest
+    ffgt-speedtest \
+    -tunneldigger \
+    -gluon-alfred
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
 
 GLUON_SITE_PACKAGES_standard := \
     tcpdump \
     mtr \
-    ip-full
+    ip-full \
+    -tunneldigger \
+    -gluon-alfred
 
 # \ bird1-ivp6 bird1c-ipv6
 
