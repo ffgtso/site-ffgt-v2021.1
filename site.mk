@@ -29,7 +29,6 @@ GLUON_FEATURES := \
 #		chosen feature flags
 
 GLUON_SITE_PACKAGES := iwinfo \
-    ffgt-tunneldigger \
     tecff-autoupdater-wifi-fallback \
     gluon-radv-filterd \
     gluon-ssid-changer \
@@ -47,7 +46,6 @@ GLUON_SITE_PACKAGES := iwinfo \
     gluon-web-logging \
     gluon-migrate-ffbi \
     ffgt-speedtest \
-    -tunneldigger \
     -gluon-alfred
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
