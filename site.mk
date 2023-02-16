@@ -44,7 +44,7 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffho-ap-timer \
     ffgt-nachtruhe \
     gluon-web-logging \
-    gluon-migrate-ffbi \
+    gluon-migrate-ffbiv2 \
     ffgt-speedtest \
     -gluon-alfred
 
