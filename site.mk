@@ -45,6 +45,7 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffgt-nachtruhe \
     gluon-web-logging \
     gluon-migrate-ffbiv2 \
+    fflg-migrate-to-multidomain \
     ffgt-speedtest \
     -gluon-alfred
 
@@ -54,7 +55,6 @@ GLUON_SITE_PACKAGES_standard := \
     tcpdump \
     mtr \
     ip-full \
-    -tunneldigger \
     -gluon-alfred
 
 # \ bird1-ivp6 bird1c-ipv6
