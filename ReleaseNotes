@@ -10,8 +10,9 @@ includes some additional modules.
    1.1.2: v2018.2.x based, fastd
    1.1.5: v2018.2.x based, L2TP (tunneldigger)
    1.1.6: v2018.2.x based, VXLAN via Wireguard
-   1.2.0: v2019.1.x based, L2TP (tunneldigger) (>= 1.2.0~38 includes gluon-migrate-ffbi)
-   1.4.0: v2021.1.x based, L2TP (tunneldigger)
+   1.2.0: v2019.1.x based, L2TP (tunneldigger) (>= 1.2.0~38 includes the BROKEN gluon-migrate-ffbi)
+   1.4.0: v2021.1.x based, L2TP (tunneldigger) (>= 1.4.0~48 includes a WORKING gluon-migrate-ffbiv2, ~50 fflg-migrate-to-multidomain)
+   1.5.0: v2022.1.x based, L2TP (tunneldigger)
 
  - modified $GLUON/package/gluon-setup-mode/luasrc/lib/gluon/upgrade/320-setup-ifname
    and $GLUON/package/gluon-setup-mode/files/lib/gluon/setup-mode/rc.d/S20network so
@@ -93,74 +94,16 @@ includes some additional modules.
    Script that checks every five minutes for the presence of the tunneldigger process,
    restarting it if neccessary.
 
- - gluon-migrate-ffbi
+ - gluon-migrate-ffbiv2
 
    Migrates nodename, coordinates, ... from FFBI-Firmware to Gluon
 
-Known Issues (from Gluon's Release Notes):
-==========================================
+ - fflg-migrate-to-multidomain
 
-v2017.1:
---------
+   Migrates from FFLG-Firmware to Mesh "lbg" in the 4830-Firmware
 
-- Note: There is an issue in all Gluon versions before 2016.2.6 that will
-  lead to x86 systems losing their configuration when upgrading to Gluon
-  2017.1! Older Gluon versions should be upgraded to 2016.2.6 first before
-  switching to 2017.1.
 
-- Another potential issue mostly affects virtual machines: Gluon 2017.1
-  images are bigger than 2016.2.x images on x86. If your virtual harddisk
-  is based on a 2016.2.x image, it must be resized to 273MB or bigger before
-  upgrading to Gluon 2017.1. Using qemu, the command "qemu-img resize $IMAGE 273MB"
-  can be used to do this.
-
-v2017.1.3:
-----------
-
-- Sporadic segfaults of busybox (ash) when running shell scripts on ar71xx (#1157)
-
-  The workaround added in Gluon v2017.1.1 has greatly reduced the frequency of
-  segfaults, but did not make them disappear completely.
-
-v2017.1.5:
-----------
-
-- Frequent reboots due to out-of-memory on weak hardware in larger meshes (#1243)
-
-v2017.1.6:
-----------
-
-- Improve image validation for TP-Link CPE/WBS 210/510 and make it ready for
-  future images (LEDE/6577fe2198f5)
-
-  Future OpenWrt/Gluon images will move the image metadata (“support-list”) of
-  the CPE/WBS 210/510 images to a different offset. Make sysupgrade ready to
-  allow installing such images.
-
-  This change was also backported to Gluon v2016.2.x to allow direct updates
-  to future Gluon master versions without installing v2017.1.x first.
-
-- Sporadic segfaults of busybox (ash) when running shell scripts on ar71xx have
-  disappeared with the latest updates (#1157)
-
-v2018.1:
---------
-
-- This version changes the flash partition layout on some devices (TP-Link
-  CPE/WBS 210/510). To avoid upgrade failures, make sure to upgrade to Gluon
-  2017.1.8 or the latest Gluon 2016.2.x (unreleased) before installing Gluon
-  2018.1.
-
-v2018.1.1:
-----------
-
-- Frequent reboots due to out-of-memory or high load due to memory pressure
-  on weak hardware specially in larger meshes (#1243)
-
-  Optimizations in Gluon 2018.1 have significantly improved memory usage. There
-  are still known bugs leading to unreasonably high load that we hope to solve
-  in future releases.
-
+For further info check corresponding Gluon Release Notes.
 
 
 
