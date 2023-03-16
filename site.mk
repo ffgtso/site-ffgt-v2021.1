@@ -46,6 +46,7 @@ GLUON_SITE_PACKAGES := iwinfo \
     gluon-web-logging \
     gluon-migrate-ffbiv2 \
     fflg-migrate-to-multidomain \
+    ffue-migrate-to-multidomain \
     ffgt-speedtest \
     -gluon-alfred
 
