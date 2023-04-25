@@ -31,7 +31,7 @@ GLUON_FEATURES := \
 GLUON_SITE_PACKAGES := iwinfo \
     tecff-autoupdater-wifi-fallback \
     gluon-radv-filterd \
-    gluon-ssid-changer \
+    tecff-ssid-changer \
     ffgt-banner \
     ffgt-geolocate \
     ffgt-setup-mode \
