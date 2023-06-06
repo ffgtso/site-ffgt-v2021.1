@@ -61,9 +61,9 @@ GLUON_SITE_PACKAGES_standard := \
     wpa-supplicant-openssl
 
 ifeq ($(GLUON_TARGET),ar71xx-tiny)
-	GLUON_SITE_PACKAGES = -wpa-supplicant-openssl +wpa-supplicant-dummy
+	GLUON_SITE_PACKAGES := -wpa-supplicant-openssl +wpa-supplicant-dummy
 else
-	GLUON_SITE_PACKAGES = -wpa-supplicant-dummy +wpa-supplicant-openssl
+	GLUON_SITE_PACKAGES := -wpa-supplicant-dummy +wpa-supplicant-openssl
 endif
 
 ##	DEFAULT_GLUON_RELEASE
