@@ -56,14 +56,12 @@ GLUON_SITE_PACKAGES_standard := \
     tcpdump \
     mtr \
     ip-full \
-    -gluon-alfred \
-    -wpa-supplicant-dummy \
-    wpa-supplicant-openssl
+    -gluon-alfred
 
 ifeq ($(GLUON_TARGET),ar71xx-tiny)
-	GLUON_SITE_PACKAGES := -wpa-supplicant-openssl +wpa-supplicant-dummy
+	GLUON_SITE_PACKAGES := wpa-supplicant-dummy
 else
-	GLUON_SITE_PACKAGES := -wpa-supplicant-dummy +wpa-supplicant-openssl
+	GLUON_SITE_PACKAGES := wpa-supplicant-openssl
 endif
 
 ##	DEFAULT_GLUON_RELEASE
