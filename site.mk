@@ -56,9 +56,15 @@ GLUON_SITE_PACKAGES_standard := \
     tcpdump \
     mtr \
     ip-full \
-    -gluon-alfred
+    -gluon-alfred \
+    -wpa-supplicant-dummy \
+    wpa-supplicant-openssl
 
-# \ bird1-ivp6 bird1c-ipv6
+ifeq ($(GLUON_TARGET),ar71xx-tiny)
+	GLUON_SITE_PACKAGES = -wpa-supplicant-openssl +wpa-supplicant-dummy
+else
+	GLUON_SITE_PACKAGES = -wpa-supplicant-dummy +wpa-supplicant-openssl
+endif
 
 ##	DEFAULT_GLUON_RELEASE
 #		version string to use for images
@@ -315,7 +321,6 @@ EXCLUDE_PCI_NET := \
     -kmod-bnx2
 
 ifeq ($(GLUON_TARGET),ath79-generic)
-
     GLUON_devolo-wifi-pro-1750e_SITE_PACKAGES += $(INCLUDE_USB) $(INCLUDE_USB_NET) $(INCLUDE_USB_SERIAL) $(INCLUDE_USB_STORAGE)
     GLUON_gl.inet-gl-ar150_SITE_PACKAGES += $(INCLUDE_USB) $(INCLUDE_USB_NET) $(INCLUDE_USB_SERIAL) $(INCLUDE_USB_STORAGE)
     GLUON_gl.inet-gl-ar300m-lite_SITE_PACKAGES += $(INCLUDE_USB) $(INCLUDE_USB_NET) $(INCLUDE_USB_SERIAL) $(INCLUDE_USB_STORAGE)
