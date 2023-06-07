@@ -48,19 +48,24 @@ GLUON_SITE_PACKAGES := iwinfo \
     fflg-migrate-to-multidomain \
     ffue-migrate-to-multidomain \
     ffgt-speedtest \
-    -gluon-alfred
+    -gluon-alfred \
+    -hostapd-mini \
+    -hostapd-openssl \
+    -hostapd-wolfssl \
+    -hostapd
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
 
 GLUON_SITE_PACKAGES_standard := \
     tcpdump \
     mtr \
-    ip-full
+    ip-full \
+
 
 ifeq ($(GLUON_TARGET),ar71xx-tiny)
-	GLUON_SITE_PACKAGES += wpa-supplicant-dummy
+	GLUON_SITE_PACKAGES += wpa-supplicant-dummy hostapd-mini
 else
-	GLUON_SITE_PACKAGES += wpa-supplicant
+	GLUON_SITE_PACKAGES += wpad-openssl
 endif
 
 ##	DEFAULT_GLUON_RELEASE
