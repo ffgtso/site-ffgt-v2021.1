@@ -55,7 +55,7 @@ GLUON_FEATURES_standard := wireless-encryption-wpa3
 GLUON_SITE_PACKAGES_standard := \
     tcpdump \
     mtr \
-    ip-full
+    ip-full \
     wpad-mini
 
 ifeq ($(GLUON_TARGET),ar71xx-tiny)
