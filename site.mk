@@ -48,6 +48,9 @@ GLUON_SITE_PACKAGES := iwinfo \
     fflg-migrate-to-multidomain \
     ffue-migrate-to-multidomain \
     ffgt-speedtest \
+    ffda-geolocator \
+    ffda-location \
+    ffda-migrate-update-brnch \
     -gluon-alfred
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
