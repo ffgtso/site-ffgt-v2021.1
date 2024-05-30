@@ -50,7 +50,7 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffgt-speedtest \
     ffda-geolocator \
     ffda-location \
-    ffda-migrate-update-brnch \
+    ffda-migrate-update-branch \
     -gluon-alfred
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
