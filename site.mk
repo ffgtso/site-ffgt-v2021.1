@@ -51,7 +51,9 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffda-geolocator \
     ffda-location \
     ffda-migrate-update-branch \
-    -gluon-alfred
+    gluon-alfred
+
+# gluon-alfred because of Hegoland ...
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
 
