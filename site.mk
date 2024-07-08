@@ -45,8 +45,7 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffgt-nachtruhe \
     gluon-web-logging \
     gluon-migrate-ffbiv2 \
-    fflg-migrate-to-multidomain \
-    ffue-migrate-to-multidomain \
+    ffX-migrate-to-4830 \
     ffgt-speedtest \
     ffda-geolocator \
     ffda-location \
