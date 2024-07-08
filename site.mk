@@ -44,13 +44,14 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffho-ap-timer \
     ffgt-nachtruhe \
     gluon-web-logging \
-    gluon-migrate-ffbiv2 \
     ffX-migrate-to-4830 \
     ffgt-speedtest \
     ffda-geolocator \
     ffda-location \
-    ffda-migrate-update-branch \
-    gluon-alfred
+    ffda-migrate-update-branch
+
+#    gluon-alfred \
+#    gluon-migrate-ffbiv2 \
 
 # gluon-alfred because of Hegoland ...
 
