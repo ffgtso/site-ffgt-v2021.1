@@ -48,7 +48,8 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffgt-speedtest \
     ffda-geolocator \
     ffda-location \
-    ffda-migrate-update-branch
+    ffda-migrate-update-branch \
+    ffgt-eol-device
 
 #    gluon-alfred \
 #    gluon-migrate-ffbiv2 \
