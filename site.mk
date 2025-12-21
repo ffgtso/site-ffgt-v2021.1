@@ -35,9 +35,6 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffgt-banner \
     ffgt-geolocate \
     ffgt-setup-mode \
-    ffgt-location \
-    ffgt-geolocator \
-    ffda-domain-director \
     respondd-module-airtime \
     ffgt-preserve-mods \
     ffda-name-conformizer \
@@ -50,6 +47,9 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffda-location \
     ffda-migrate-update-branch \
     ffgt-eol-device
+#    ffgt-location \
+#    ffgt-geolocator \
+#    ffda-domain-director \
 
 #    gluon-alfred \
 #    gluon-migrate-ffbiv2 \
