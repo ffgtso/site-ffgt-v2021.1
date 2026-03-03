@@ -43,8 +43,6 @@ GLUON_SITE_PACKAGES := iwinfo \
     gluon-web-logging \
     ffX-migrate-to-4830 \
     ffgt-speedtest \
-    ffda-geolocator \
-    ffda-location \
     ffda-migrate-update-branch \
     ffgt-eol-device \
     4830-node-watchdog \
