@@ -47,7 +47,8 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffda-location \
     ffda-migrate-update-branch \
     ffgt-eol-device \
-    4830-node-watchdog
+    4830-node-watchdog \
+    4830-mapped-email
 #    ffgt-location \
 #    ffgt-geolocator \
 #    ffda-domain-director \
