@@ -19,9 +19,8 @@ GLUON_FEATURES := \
 	web-advanced \
 	web-wizard \
 	web-private-wifi \
+	migrate-vpn \
 	config-mode-domain-select
-
-#	migrate-vpn \
 
 ##	GLUON_SITE_PACKAGES
 #		Specify additional Gluon/OpenWrt packages to include here;
@@ -47,7 +46,7 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffgt-eol-device \
     4830-node-watchdog \
     4830-mapped-email \
-    sed
+    gluon-web-logging \
 #    ffgt-location \
 #    ffgt-geolocator \
 #    ffda-domain-director \
@@ -63,7 +62,6 @@ GLUON_SITE_PACKAGES_standard := \
     tcpdump \
     mtr \
     ip-full \
-    gluon-web-logging \
 
 ifeq ($(GLUON_TARGET),ar71xx-tiny)
 	GLUON_SITE_PACKAGES += wpa-supplicant-dummy
