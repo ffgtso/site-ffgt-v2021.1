@@ -20,7 +20,8 @@ GLUON_FEATURES := \
 	web-wizard \
 	web-private-wifi \
 	migrate-vpn \
-	config-mode-domain-select
+	config-mode-domain-select \
+    4830-meshstate
 
 ##	GLUON_SITE_PACKAGES
 #		Specify additional Gluon/OpenWrt packages to include here;
@@ -47,14 +48,7 @@ GLUON_SITE_PACKAGES := iwinfo \
     4830-node-watchdog \
     4830-mapped-email \
     gluon-web-logging \
-#    ffgt-location \
-#    ffgt-geolocator \
-#    ffda-domain-director \
-
-#    gluon-alfred \
-#    gluon-migrate-ffbiv2 \
-
-# gluon-alfred because of Hegoland ...
+    4830-meshstate
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
 
