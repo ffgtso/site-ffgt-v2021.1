@@ -47,8 +47,7 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffgt-eol-device \
     4830-node-watchdog \
     4830-mapped-email \
-    gluon-web-logging \
-    4830-meshstate
+    gluon-web-logging
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
 
