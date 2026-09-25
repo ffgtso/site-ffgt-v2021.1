@@ -56,10 +56,14 @@ GLUON_SITE_PACKAGES_standard := \
     mtr \
     ip-full \
 
-ifeq ($(GLUON_TARGET),ar71xx-tiny)
-	GLUON_SITE_PACKAGES += wpa-supplicant-dummy
+ifeq ($(GLUON_TARGET),rt305x)
+    GLUON_SITE_PACKAGES += wpa-supplicant-dummy
 else
-	GLUON_SITE_PACKAGES += wpa-supplicant-openssl
+    ifeq ($(GLUON_TARGET),ar71xx-tiny)
+	    GLUON_SITE_PACKAGES += wpa-supplicant-dummy
+    else
+	    GLUON_SITE_PACKAGES += wpa-supplicant-openssl
+	endif
 endif
 
 ##	DEFAULT_GLUON_RELEASE
@@ -405,7 +409,6 @@ ifeq ($(GLUON_TARGET),ramips-mt7621)
 endif
 
 ifeq ($(GLUON_TARGET),ramips-mt76x8)
-
     GLUON_gl-mt300n-v2_SITE_PACKAGES += $(INCLUDE_USB) $(INCLUDE_USB_NET) $(INCLUDE_USB_SERIAL) $(INCLUDE_USB_STORAGE)
     GLUON_gl.inet-microuter-n300_SITE_PACKAGES += $(INCLUDE_USB) $(INCLUDE_USB_NET) $(INCLUDE_USB_SERIAL) $(INCLUDE_USB_STORAGE)
     GLUON_netgear-r6120_SITE_PACKAGES += $(INCLUDE_USB) $(INCLUDE_USB_NET) $(INCLUDE_USB_SERIAL) $(INCLUDE_USB_STORAGE)
