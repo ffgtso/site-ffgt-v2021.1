@@ -409,8 +409,7 @@ ifeq ($(GLUON_TARGET),ramips-mt76x8)
 endif
 
 ifeq ($(GLUON_TARGET),ramips-rt305x)
-    GLUON_d-link-dir-615-d_SITE_PACKAGES -= tcpdump mtr ip-full
-    GLUON_d-link-dir-615-d_SITE_PACKAGES += ip-tiny
+    GLUON_d-link-dir-615-d_SITE_PACKAGES -= tcpdump mtr
 endif
 
 ifeq ($(GLUON_TARGET),rockchip-armv8)
