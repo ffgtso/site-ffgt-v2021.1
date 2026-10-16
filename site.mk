@@ -51,10 +51,10 @@ GLUON_SITE_PACKAGES := iwinfo \
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
 
-GLUON_SITE_PACKAGES_standard := \
-    tcpdump \
-    mtr \
-    ip-full
+#GLUON_SITE_PACKAGES_standard := \
+#    tcpdump \
+#    mtr \
+#    ip-full
 
 ifeq ($(GLUON_TARGET),ramips-rt305x)
     GLUON_SITE_PACKAGES += wpa-supplicant-dummy
@@ -62,7 +62,7 @@ else
     ifeq ($(GLUON_TARGET),ar71xx-tiny)
 	    GLUON_SITE_PACKAGES += wpa-supplicant-dummy
     else
-	    GLUON_SITE_PACKAGES += wpa-supplicant-openssl
+	    GLUON_SITE_PACKAGES += wpa-supplicant-openssl tcpdump mtr ip-full
 	endif
 endif
 
@@ -421,10 +421,10 @@ ifeq ($(GLUON_TARGET),ramips-mt76x8)
 
 endif
 
-ifeq ($(GLUON_TARGET),ramips-rt305x)
-    GLUON_d-link-dir-615-d_SITE_PACKAGES -= tcpdump mtr
-
-endif
+#ifeq ($(GLUON_TARGET),ramips-rt305x)
+#    GLUON_d-link-dir-615-d_SITE_PACKAGES -= tcpdump mtr
+#
+#endif
 
 ifeq ($(GLUON_TARGET),rockchip-armv8)
     GLUON_SITE_PACKAGES += $(INCLUDE_USB) $(INCLUDE_USB_NET) $(INCLUDE_USB_SERIAL) $(INCLUDE_USB_STORAGE)
