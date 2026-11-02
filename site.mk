@@ -42,14 +42,15 @@ GLUON_SITE_PACKAGES := iwinfo \
     ffgt-speedtest \
     ffda-migrate-update-branch \
     ffgt-eol-device \
-    4830-node-watchdog \
-    4830-mapped-email \
     gluon-web-logging \
-    4830-offline-manager
+    4830-mapped-email \
+    4830-offline-manager \
+    4830-meshstate
 
 #    tecff-ssid-changer \
 #    tecff-autoupdater-wifi-fallback \
-#    4830-meshstate
+#    4830-node-watchdog \
+
 
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
