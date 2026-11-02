@@ -29,9 +29,7 @@ GLUON_FEATURES := \
 #		chosen feature flags
 
 GLUON_SITE_PACKAGES := iwinfo \
-    tecff-autoupdater-wifi-fallback \
     gluon-radv-filterd \
-    tecff-ssid-changer \
     ffgt-banner \
     ffgt-geolocate \
     ffgt-setup-mode \
@@ -47,7 +45,12 @@ GLUON_SITE_PACKAGES := iwinfo \
     4830-node-watchdog \
     4830-mapped-email \
     gluon-web-logging \
-    4830-meshstate
+    4830-offline-manager
+
+#    tecff-ssid-changer \
+#    tecff-autoupdater-wifi-fallback \
+#    4830-meshstate
+
 
 GLUON_FEATURES_standard := wireless-encryption-wpa3
 
@@ -72,7 +75,7 @@ endif
 #			opkg compare-versions "$1" '>>' "$2"
 #		to decide if a version is newer or not.
 
-DEFAULT_GLUON_RELEASE := 1.4.0
+DEFAULT_GLUON_RELEASE := 1.4.1
 
 # Variables set with ?= can be overwritten from the command line
 
