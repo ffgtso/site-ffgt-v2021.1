@@ -60,15 +60,26 @@ GLUON_FEATURES_standard := wireless-encryption-wpa3
 #    mtr \
 #    ip-full
 
+#ifeq ($(GLUON_TARGET),ramips-rt305x)
+#    GLUON_SITE_PACKAGES += wpa-supplicant-dummy
+#else
+#    ifeq ($(GLUON_TARGET),ar71xx-tiny)
+#	    GLUON_SITE_PACKAGES += wpa-supplicant-dummy
+#    else
+#	    GLUON_SITE_PACKAGES += wpa-supplicant-openssl tcpdump mtr ip-full
+#	endif
+#endif
+
 ifeq ($(GLUON_TARGET),ramips-rt305x)
-    GLUON_SITE_PACKAGES += wpa-supplicant-dummy
+    FOO := BAR
 else
     ifeq ($(GLUON_TARGET),ar71xx-tiny)
-	    GLUON_SITE_PACKAGES += wpa-supplicant-dummy
+	    FOO := BAR
     else
-	    GLUON_SITE_PACKAGES += wpa-supplicant-openssl tcpdump mtr ip-full
+	    GLUON_SITE_PACKAGES += tcpdump mtr ip-full
 	endif
 endif
+
 
 ##	DEFAULT_GLUON_RELEASE
 #		version string to use for images
