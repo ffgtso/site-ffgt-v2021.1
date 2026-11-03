@@ -13,6 +13,7 @@ includes some additional modules.
    1.2.0: v2019.1.x based, L2TP (tunneldigger) (>= 1.2.0~38 includes the BROKEN gluon-migrate-ffbi)
    1.2.5: v2019.1.x based, fastd+batman14 — FFUE-Migration
    1.4.0: v2021.1.x based, L2TP (tunneldigger) (>= 1.4.0~48 includes a WORKING gluon-migrate-ffbiv2, ~50 fflg-migrate-to-multidomain)
+   1.4.1: v2021.1.x based, L2TP (tunneldigger) with 4830-offline-manager & gluon-batadv-next
    1.5.0: v2022.1.x based, L2TP (tunneldigger)
 
  - modified $GLUON/package/gluon-setup-mode/luasrc/lib/gluon/upgrade/320-setup-ifname

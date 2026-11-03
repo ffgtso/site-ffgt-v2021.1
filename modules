@@ -30,3 +30,8 @@ GLUON_SITE_FEEDS="ffgt"
 PACKAGES_FFGT_REPO=https://github.com/wusel42/ffgt_packages-v2020.1.git
 PACKAGES_FFGT_COMMIT=LATEST
 PACKAGES_FFGT_BRANCH=master
+
+GLUON_SITE_FEEDS+=" batman_adv_next"
+PACKAGES_BATMAN_ADV_NEXT_REPO="https://github.com/T-X/gluon-batman-adv-next.git"
+PACKAGES_BATMAN_ADV_NEXT_COMMIT="ab13115513bcb2351d616e20c68cd2a95dd0c51e"
+PACKAGES_BATMAN_ADV_NEXT_BRANCH="batman-adv-next"
